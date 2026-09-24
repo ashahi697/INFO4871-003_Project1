@@ -1,0 +1,318 @@
+/* ==========================================
+   1. GLOBAL STRIBUTES & RESET
+   ================================          */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================
+   2. CUSTOM HEADER (Consistent Across All Pages)
+   ========================================== */
+.custom-header {
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.custom-header .site-logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.custom-header nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.custom-header nav a {
+    color: #d1d5db;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.custom-header nav a:hover,
+.custom-header nav a.active {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   3. SHARED LAYOUT CONTAINERS
+   ========================================== */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Two-column layout used on Goodreads genre page */
+.two-column-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .two-column-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   4. HOMEPAGE STYLES
+   ========================================== */
+.hero-banner {
+    background-color: #374151;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.hero-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.featured-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* ==========================================
+   5. HISTORY GENRE PAGE (Goodreads Style)
+   ========================================== */
+.breadcrumbs {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.genre-header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.genre-description {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+}
+
+.genre-description .more-link {
+    color: #2563eb;
+    cursor: pointer;
+}
+
+/* Book Grid (New Releases) */
+.book-grid-section h2 {
+    font-size: 1.25rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
+}
+
+.book-card {
+    background: white;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+}
+
+.book-cover-placeholder {
+    width: 100%;
+    height: 220px;
+    background-color: #d1d5db;
+    border-radius: 2px;
+    margin-bottom: 0.75rem;
+}
+
+.book-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book-card .author {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+/* Sidebar Widgets */
+.sidebar .widget {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar .widget h3 {
+    font-size: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.sidebar ul li a {
+    color: #2563eb;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   6. BOOK DETAIL PAGE (Bookshop.org Style)
+   ========================================== */
+.product-hero {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2.5rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 2rem;
+}
+
+.product-cover-large {
+    width: 100%;
+    height: 400px;
+    background-color: #cbd5e1;
+    border-radius: 4px;
+}
+
+.product-details h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-details .author-byline {
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.product-details .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111827;
+    margin: 1rem 0;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-primary {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ==========================================
+   7. BLOG POST PAGE (B&N Style)
+   ========================================== */
+.blog-article {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.blog-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.blog-meta {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+}
+
+.blog-body p {
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+}
+
+.blog-image-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+    margin: 2rem 0;
+}
