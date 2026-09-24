@@ -1,0 +1,39 @@
+/* 1. Global Page Styles (Background and Font) */
+body {
+    background-color: rgb(249, 236, 194);
+    font-family: Garamond, serif;
+}
+
+/* 2. Center the main page title ("M&A Books") */
+h1:first-of-type {
+    text-align: center;
+}
+
+/* 3. Target ONLY the top navigation list to make it horizontal inside a dark box */
+ul:first-of-type {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #2c2c2c; /* Dark box background */
+    padding: 12px 25px;
+    border-radius: 6px;
+    width: fit-content;
+    margin: 20px auto; /* Centers the box on the page */
+}
+
+/* Style the navigation links white */
+ul:first-of-type li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+ul:first-of-type li a:hover {
+    text-decoration: underline;
+}
+
+/* 4. Lower "Featured Book of the Week" (uses padding-top to avoid margin collapse) */
+h2:first-of-type {
+    padding-top: 50px; 
+}
