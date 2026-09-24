@@ -1,6 +1,4 @@
-/* main styles for the bookstore homepage */
-
-/* background color & font */
+/* general page styling */
 body {
     background-color: rgb(249, 236, 194);
     font-family: Garamond, serif;
@@ -9,7 +7,7 @@ body {
     color: #2c2c2c;
 }
 
-/* header container to stack everything together in the center */
+/* header layout - stacks title, nav, and search */
 header {
     display: flex;
     flex-direction: column;
@@ -18,14 +16,13 @@ header {
     margin-bottom: 30px;
 }
 
-/* center the main title inside the header */
 header h1 {
     text-align: center;
     font-size: 2.5rem;
     margin: 0;
 }
 
-/* top nav bar - horizontal inside the dark box */
+/* nav bar styling with dark background box */
 header ul {
     list-style-type: none;
     display: flex;
@@ -49,7 +46,7 @@ header ul li a:hover {
     text-decoration: underline;
 }
 
-/* search bar and button right underneath the buttons */
+/* search bar area right under the nav buttons */
 header form, 
 header .search-container {
     display: flex;
@@ -84,13 +81,7 @@ button:hover, input[type="submit"]:hover {
     background-color: #444444;
 }
 
-/* push featured books down a bit */
-h2:first-of-type {
-    padding-top: 30px; 
-    margin-bottom: 15px;
-}
-
-/* 4 books side by side, made them a bit bigger */
+/* homepage row for featured books */
 .book-row {
     display: flex;
     justify-content: center;
@@ -107,14 +98,54 @@ h2:first-of-type {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* standard text stuff */
+/* buy books catalog grid */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 25px;
+}
+
+/* individual book card layout */
+.book-card {
+    background-color: #ffffff;
+    border: 1px solid #d2c29d;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* make all cover images the exact same size */
+.book-card img {
+    width: 180px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* push author name right under the picture */
+.book-card .author, 
+.book-card p.author {
+    display: block;
+    font-style: italic;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+/* basic typography adjustments */
 h2, h3 {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 
 p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.5;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
